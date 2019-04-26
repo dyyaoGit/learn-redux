@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ReduxWithCount from './components/ReduxWithCount';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import TodoList from './views/todoList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+    return (
+        <Router>
+            <div className="App">
+                <Route path="/reduxWidthCount" component={ReduxWithCount} />
+                <Route path="/TodoList" component={TodoList} />
+            </div>
+        </Router>
+
+    );
 }
 
 export default App;

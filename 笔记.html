@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>redux 的一些概念</h1>
+api: 一共有三个api
+import {createStore} from 'redux'
+
+
+<ul>
+    <li>1. createStore(reducer)
+        创建一个状态容器
+        <div>
+            const store = createStore(reducer);
+        </div>
+    </li>
+    <li>
+        2. subscribe  这个api是在store上的，去订阅数据的更新。
+        store.subscribe(function () {
+
+        })
+   </li>
+    <li>
+        3. 获取数据 store.getState()   返回store当中最新的数据。
+    </li>
+    <li>
+        4. dispatch dispatch是在store对象上的。通过store.dispatch(action)去更改store当中的数据。
+    </li>
+</ul>
+
+<h2>概念:
+</h2>
+<ul>
+    <li>1. reducer  reducer是一个纯的函数，不能在里边操作外部的数据，而是应该根据传入的action的不同，去返回新的数据。reducer不一定要求用switch语法。
+    </li>
+    <li>
+        2. action action是指一个动作，唯一改变store当中数据的方法，是去dispatch出发一个action。那么action在代码当中是一个纯对象。 const action = {type: "INCREMENT"}
+    </li>
+    <li>
+        3. actionCreater 是指action的创造函数，function （item） {
+            return {type:'', item}
+        }
+    </li>
+</ul>
+
+
+</body>
+</html>
